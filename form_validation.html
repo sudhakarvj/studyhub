@@ -1,0 +1,279 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+  <title>Controls</title>
+
+  
+  
+  <style type="text/css">
+	td{text-align:left;}
+	
+	#form{
+	
+	width: 388px; 
+	height: 451px; 
+	margin: auto;
+	
+	}
+	
+  </style>
+  
+  <script language="javascript">
+		function passwordch()
+		{
+			var element=document.getElementById("pwinf");
+			var pas1=document.getElementById("password").value;
+			var pas2=document.getElementById("password1").value;
+			if (pas1!=pas2)
+			{ 
+				
+				element.style.display="block";
+				element.style.color="red";
+				if (pass==null)
+				  element.innerHTML="Re-Enter the password!";
+				else  
+				  element.innerHTML="The password is not matching!";
+				
+				element.focus();
+			}
+			else{
+			element.style.display="none";
+			}
+		}
+		function mobch()
+		{
+		   
+		    var element=document.getElementById("mbinf");
+			var mob=document.getElementById("mobile").value;
+			if (mob.length!=10)
+			{
+				element.style.display="block";
+				element.style.color="red";
+				if(isNaN(mob))
+				{
+				    element.innerHTML="You Have entered alphabets or symbols in mobile number!";
+				}
+				else
+				{
+				  element.innerHTML="Enter a valid mobile number! <br> You Have Entered "+mob.length+" digits.";
+				}
+				element.focus();
+			}
+			else{
+			element.style.display="none";
+			}
+		}
+		function pincodech()
+		{
+			var element=document.getElementById("pinf");
+			var pin=document.getElementById("pincode").value;
+			if (pin.length != 6 || isNaN(pin))
+			{ 
+				element.style.display="block";
+				element.style.color="red";
+				if (pin==null)
+				  element.innerHTML="Enter the pincode!";
+				else
+				  element.innerHTML="Enter the valid pincode!";
+				element.focus();
+			}
+			else{
+			element.style.display="none";
+			}
+			
+			
+		}
+		function namech()
+		{
+			var element=document.getElementById("ninf");
+			var valid=/^[A-Za-z]+$/;
+			var nam=document.getElementById("name");
+			if (!valid.test(nam.value))
+			{
+				element.style.display="block";
+				element.style.color="red";
+				element.innerHTML="Input contains invalid characters!<br>NOTE: Avoid Space in Name";
+				element.focus();
+				
+			}
+			
+			else{
+			element.style.display="none";
+			}
+
+		}
+		
+		function mlch()
+		{
+			var element=document.getElementById("minf");
+			//var valid=/^@.+$/;
+			var x=document.getElementById("email").value;
+			var atpos = x.indexOf("@");
+			var dotpos = x.lastIndexOf(".");
+			if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        			element.style.display="block";
+				element.style.color="red";
+				element.innerHTML="Input contains invalid email!";
+				element.focus();
+
+				
+			}
+			
+			else{
+			
+							element.style.display="none";
+			}
+
+		}
+		
+		function regnoch()
+		{
+			var pattern=/1535+/;
+			var element=document.getElementById("rinf");
+			var reg=document.getElementById("regno").value;
+			if(!pattern.test(reg))
+			{
+			  
+				element.style.color="red";
+				element.style.display="block";
+				if(reg==""){
+				  element.innerHTML="Please Enter the register number starts with 1535";}
+				else{
+				  element.innerHTML="Enter the valid register number! It should start with 1535";}
+				element.focus();
+			}
+			else{
+			element.style.display="none";
+			}
+//alert("Enter the valid register number! It should start with 1535")			
+		}
+		function gchk()
+		{
+		  var element=document.getElementById("ginf");
+		  if(document.getElementById("m").checked==false && document.getElementById("f").checked==false)
+		  {
+		    element.style.color="red";
+		    element.style.display="block";
+		    element.innerHTML="Please Specify your Gender";
+		  }
+		  else{
+			element.style.display="none";
+			}
+		}
+		function lod()
+		{
+		  document.getElementById("ninf").style.display="none";
+		  document.getElementById("pinf").style.display="none";
+		  document.getElementById("pwinf").style.display="none";
+		  document.getElementById("mbinf").style.display="none";
+		  document.getElementById("rinf").style.display="none";
+		  document.getElementById("minf").style.display="none";
+		   document.getElementById("ginf").style.display="none";
+		}
+		</script>
+</head><body style="background-color: aliceblue;" onload="lod()">
+<h1>
+<center>HTML with various controls</center>
+</h1>
+
+<h2>
+<center>Registration Form</center>
+</h2>
+
+<div id="form">
+  <p><br>
+  </p>
+  <br>
+  <table border="0" cellpadding="2" cellspacing="2">
+    <tbody>
+      <tr>
+        <td>Name:</td>
+        <td><input id="name" name="name" onblur="namech()" type="text"></td>
+      </tr>
+      <tr>
+        <td colspan="2" rowspan="1" id="ninf"><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+        <p>Registration No:</p>
+        </td>
+        <td><input id="regno" name="regno" onblur="regnoch()" type="text"></td>
+      </tr>
+      <tr>
+        <td colspan="2" rowspan="1" id="rinf"><br>
+        </td>
+      </tr>
+      <tr>
+        <td>Gender:</td>
+        <td><input name="radio" value="m" id="m" type="radio">Male<input name="radio" value="f" id="f" type="radio">Female</td>
+      </tr>
+      <tr>
+        <td colspan="2" rowspan="1" style="vertical-align: top;" id="ginf"><br>
+        </td>
+      </tr>
+      <tr>
+        <td>E-Mail:</td>
+        <td><input id="email" name="email" type="email" onfocus="gchk()" onblur="mlch()"></td>
+      </tr>
+      <tr>
+        <td colspan="2" rowspan="1" id="minf"><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+        <p>Mobile No: </p>
+        </td>
+        <td><input id="mobile" name="mobile" onblur="mobch()" type="text"></td>
+      </tr>
+      <tr>
+        <td colspan="2" rowspan="1" id="mbinf"><br>
+        </td>
+      </tr>
+      <tr>
+        <td>Address:</td>
+        <td><input id="address" name="address" type="textarea"></td>
+      </tr>
+      <tr>
+        <td>Pincode: </td>
+        <td><input name="pincode" id="pincode" onblur="pincodech()" type="text"></td>
+      </tr>
+      <tr>
+        <td colspan="2" rowspan="1" id="pinf"><br>
+        </td>
+      </tr>
+      <tr>
+        <td>State:</td>
+        <td><input id="state" name="state" type="text"></td>
+      </tr>
+      <tr>
+        <td>Country: </td>
+        <td>
+        <select>
+        <option value="india">India</option>
+        <option value="russia">Russia</option>
+        <option value="canada">Canada</option>
+        <option value="china">China</option>
+        </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Password:</td>
+        <td><input id="password" name="password" type="password"></td>
+      </tr>
+      <tr>
+        <td>Repeat Password: </td>
+        <td><input id="password1" name="password1" onblur="passwordch()" type="password"></td>
+      </tr>
+      <tr>
+        <td colspan="2" rowspan="1" id="pwinf"><br>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" rowspan="1"><input value="Submit" type="submit">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body></html>
