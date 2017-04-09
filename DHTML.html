@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Untitled Page</title>
+    <script language=javascript type="text/javascript">
+        var i=0;
+        function lod()
+        {
+            document.getElementById("s1").style.display="none";
+        }
+        function chk()
+        {
+            if(document.getElementById("HTM").checked==true)
+            {
+                document.getElementById("s1").style.display="block";
+                document.getElementById("s1").innerHTML="HTML is the standard markup language for creating Web pages. HTML stands for Hyper Text Markup Language. HTML describes the structure of Web pages using markup. HTML elements are the building blocks of HTML pages. HTML elements are represented by tags.";
+            }
+            if(document.getElementById("CSS").checked==true)
+            {
+                document.getElementById("s1").style.display="block";
+                document.getElementById("s1").innerHTML="Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language.";
+            }
+            if(document.getElementById("JS").checked==true)
+            {
+                document.getElementById("s1").style.display="block";
+                document.getElementById("s1").innerHTML="JavaScript and Java are completely different languages, both in concept and design.JavaScript was invented by Brendan Eich in 1995, and became an E c21 CMA standard in 1997.ECMA-262 is the official name of the standard. ECMAScript is the official name of the language. ";
+            }
+        }
+        function pst()
+        { 
+           if(i==null)
+           {
+            i=1;
+           }
+            var g=document.getElementById("T1").value;
+            i=i+1;
+            document.getElementById("post").innerHTML=document.getElementById("post").innerHTML + "<br><p id='p"+i+"' style='background-color:aliceblue;'>"+g+"</p>";
+            return i;
+        }
+        function del()
+        {
+            var g="p"+i;
+            var element= document.getElementById(g);
+            element.parentNode.removeChild(element);
+            i=i-1;
+            return i;
+            
+        }
+    </script>
+    <style type="text/css">
+    #b1:active{background-color:black;}
+    
+ 
+    </style>
+</head>
+<body onload="lod()" style="text-align: center">
+    <span style="color: #ff3366">&nbsp;DEMO OF D/HTML</span><br />
+    <br />
+    <span style="color: #3333cc">Language:<span style="color: #333399">&nbsp;</span></span><span
+        style="color: #333399">
+    <input id="HTM" type="radio" name="radio" onclick="chk()"/>HTML &nbsp;
+    <input id="CSS" type="radio" name="radio" onclick="chk()"/>CSS
+    <input id="JS" type="radio" name="radio" onclick="chk()"/>JAVASCRIPT </span>
+    <div id="s1" style="left: 366px; width: 666px; position: absolute; top: 115px; height: 100px; font-size: 20px; color: maroon; font-family: Serif, Sans-Serif, Cursive, Fantasy, Arial, 'Comic Sans MS'; font-variant: small-caps; background-color: aliceblue;">
+        Hai:+
+    </div >
+    <br>
+    <span style="color: #0033cc">
+    Enter your Comments</span>:<textarea id="T1" cols="20" style="height: 35px"></textarea><input type="button" value="Post" onclick="pst()"/>
+    <div id="post" style="left: 35px; width: 312px; position: absolute; top: 118px; height: 100px">
+    </div>
+    <input type="button" value="Delete" onclick="del()"/>
+
+</body>
+</html>
