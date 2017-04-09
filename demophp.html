@@ -1,0 +1,64 @@
+<html>
+<head>
+<title> Form</title>
+</head>
+<body bgcolor="d7f3ea">
+
+<h1 align="center">
+<font color="red">
+SIGN UP
+</font>
+</h1>
+<form action="displayphp.php" method="post">
+<table align="center">
+
+<tr> <td> FIRST NAME: </td>  <td> <input type="text" name="t1" size="20"> </td></tr>
+
+<tr> <td> LAST NAME: </td>  <td> <input type="text" name="t2" size="20""> </td></tr>
+
+<tr> <td> E-Mail ADDRESS: </td>  <td> <input type="email" name="t3" size="20"> <input type="button" onclick="alert(' USER NAME AVAILABLE!')" value="CHECK"></td></tr>
+
+<tr> <td> PASSWORD: </td>  <td> <input type="password" name="t4" size="20"> </td></tr>
+
+<tr> <td> RE-TYPE PASSWORD: </td>  <td> <input type="password" name="t5" size="20"> </td></tr>
+
+<tr> <td> DATE OF BIRTH: </td>  <td><input type="date" name="dt"></td></tr>
+
+<tr> <td> GENDER: </td> 
+<td> <input type="radio" value="MALE" name="radio"> MALE 
+ <input type="radio" value="female" name="radio"> FEMALE 
+ <input type="radio" value="others" name="radio"> OTHERS </td>
+ </tr>
+
+<tr> <td> MOBILE NUMBER: </td>  <td> <input type="text" name="t6" size="20"> </td></tr>
+<tr> <td> CURRENT E-Mail ID: </td>  <td> <input type="email" name="t7" size="20"> (Optional) </td></tr>
+
+<tr><td> COUNTRY:</td>
+<td> <select size="1" name="loc">
+
+<option></option>
+<option>AMERICA</option>
+<option>CHINA</option>
+<option>JAPAN</option>
+<option>INDIA</option>
+<option>PAKISTAN</option>
+<option>SINGAORE</option>
+</select>
+
+</td></tr>
+
+<tr><td> ADDRESS:</td> <td> <textarea rows="4" cols="30" name="add"> </textarea></td></tr>
+
+</table><br>
+ <center> <input type="checkbox" name="c1"> I AGREE TO TERMS OF SERVICE AND PRIVATE POLICY <br> <br>
+
+ <input type="submit" value="SUBMIT"> &nbsp&nbsp&nbsp&nbsp <input type="reset">
+
+
+
+
+
+
+</form>
+</body>
+</html>
