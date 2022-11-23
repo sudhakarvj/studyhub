@@ -1,0 +1,19 @@
+Some important Regex
+
+1. To capture common HTML Tags (opening tag & closing tag incl. attributes)
+<[^>]*>
+
+2. To capture all punctuations
+[$&+,:;=?@#|'<>.-^*()%!]
+
+3. To capture email ID
+\b(?:[a-zA-Z0-9\._-]+@[a-zA-Z0-9\._-]+[a-zA-Z0-9\._-])\b
+
+4. To capture URL web address
+((?:https?|ftp):\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|(?:https?|ftp):\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})
+
+5. To capture date, month related
+(?:from\s[0-9]{1,2}(\ to\ )[0-9]{1,2}\s(?:(?:january|february|march|april|may|june|july|august|september|october|november|december)|(?:jan|feb|mar|apr|may|jun|jul|aug|sep(?:t?)|oct|nov|dec)))
+
+6. To capture closing Quotes Punctuation Finding Regex
+ (?:(?:\“|\‘).*?(?:\”|\’)(?:\.|\;|\:|\,|\?|\!?))
